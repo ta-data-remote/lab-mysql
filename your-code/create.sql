@@ -1,0 +1,48 @@
+-- INTRODUCTION
+
+-- CHALLENGE 1 - Design the Database
+
+-- CHALLENGE 2 - Create the Database and Tables
+CREATE DATABASE IF NOT EXISTS lab_mysql
+CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
+USE lab_mysql;
+
+CREATE TABLE IF NOT EXISTS invoices (
+ID INT AUTO_INCREMENT,
+invoice_num VARCHAR(255),
+customer INT,
+staff INT,
+car INT,
+date DATE,
+PRIMARY KEY (ID))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS cars (
+ID INT AUTO_INCREMENT,
+car_vin VARCHAR(255),
+manufacturer VARCHAR(255),
+model VARCHAR(255),
+year INT,
+color VARCHAR(255),
+PRIMARY KEY (ID));
+
+CREATE TABLE IF NOT EXISTS salespersons (
+ID INT AUTO_INCREMENT,
+staff_id VARCHAR(255),
+name VARCHAR(255),
+store VARCHAR(255),
+PRIMARY KEY (ID));
+
+ CREATE TABLE IF NOT EXISTS customers (
+ ID INT AUTO_INCREMENT,
+customer_id VARCHAR(255),
+name VARCHAR(255),
+phone CHAR(50),
+email VARCHAR(255),
+address VARCHAR(255),
+city VARCHAR(255),
+state VARCHAR(255),
+country VARCHAR(255),
+zip char(10),
+PRIMARY KEY (ID));
