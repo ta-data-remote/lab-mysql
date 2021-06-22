@@ -27,6 +27,8 @@ Note that in MySQL typically each entity table should have an auto-increment num
 Also note that some attributes are required while other ones can be blank
  */
  
+ 
+ 
  -- Challenge 2 - Create the Database and Tables
  
  /*
@@ -51,6 +53,67 @@ USE lab_mysql;
 4. Then following the USE statement, write all your CREATE TABLE statements. 
 You'll need one CREATE TABLE statement for each table you decide to create. Make sure to end each statement with a semicolon
  */
+ 
+ -- 1.Create a MySQL database for this lab
+ CREATE DATABASE lab_mysql;
+ USE lab_mysql;
+ 
+-- 2. Create table
+
+CREATE TABLE IF NOT EXISTS cars(
+ID INT NOT NULL AUTO_INCREMENT, 
+VIN INT NOT NULL,
+Manufacturer VARCHAR(20),
+Model VARCHAR(40),
+Year YEAR, 
+Color VARCHAR(10),
+PRIMARY KEY (ID,VIN)
+); 
+ 
+CREATE TABLE IF NOT EXISTS customers(
+ID INT NOT NULL AUTO_INCREMENT,
+Customer_ID VARCHAR(20) NOT NULL,
+Name VARCHAR(20),
+Phone_number VARCHAR(20),
+Email VARCHAR(40),
+Address VARCHAR(40), 
+City VARCHAR(40),
+Province VARCHAR(40),
+Country VARCHAR(40),
+Zip_code VARCHAR(10), 
+PRIMARY KEY (ID,Customer_ID)
+);  
+ 
+ CREATE TABLE IF NOT EXISTS sales_persons(
+ID INT NOT NULL AUTO_INCREMENT,
+Staff_ID VARCHAR(20) NOT NULL,
+Name VARCHAR(20),
+Store VARCHAR(20),
+PRIMARY KEY (ID,Staff_ID)
+); 
+ 
+ -- YYYY-MM-DD for the date entries
+ -- car should be a foreign key as is the one we relate with the cars table
+ 
+  CREATE TABLE IF NOT EXISTS invoices(
+ID INT NOT NULL AUTO_INCREMENT,
+Invoice_number VARCHAR(20) NOT NULL,
+Date DATE,
+car VARCHAR(20),
+customer VARCHAR(40),
+sales_person VARCHAR(40), 
+PRIMARY KEY (ID,Invoice_number),
+FOREIGN KEY (car) REFERENCES cars(ID),
+FOREIGN KEY (sales_person) REFERENCES sales_persons(Staff_ID)
+); 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  -- Challenge 3 - Seeding the Database
  
