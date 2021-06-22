@@ -21,13 +21,11 @@ Using pen and paper, design a database to meet the minimal requirements of your 
 Before solving this challenge, review your lesson about database structure and design then ask yourself:
 
 * **What entities and attributes should be included in the database?**
-	* For each attribute, what data type is most suitable?
-	* Note that in MySQL typically each entity table should have an auto-increment numeric ID. The auto-increment ID is different from the customer ID or staff ID.
+	* For each attribute, choose the data type that is most suitable
+	* Note that in MySQL typically each entity table should have an **auto-increment numeric ID**. The auto-increment ID is different from the customer ID or staff ID.
 	* Also note that some attributes are required while other ones can be blank.
 
-* **What are the relations between these entities? Which relations are one-to-one vs one-to-many vs many-to-many?**
 
-Use pen and paper to create the design, take a picture with your phone and send the image to yourself. If you use software to create the database diagram, export in the image format (JPG or PNG). Either way, the image will be submitted as one of the deliverables.
 
 ## Challenge 2 - Create the Database and Tables
 
@@ -69,41 +67,41 @@ For your convenience, we provide you some example dummy data. These dummy data m
 
 | ID | VIN | Manufacturer | Model | Year | Color |
 | --- | --- | --- | --- | --- | --- |
-| 0 | 3K096I98581DHSNUP | Volkswagen | Tiguan | 2019 | Blue |
-| 1 | ZM8G7BEUQZ97IH46V | Peugeot | Rifter | 2019 | Red |
-| 2 | RKXVNNIHLVVZOUB4M | Ford | Fusion | 2018 | White |
-| 3 | HKNDGS7CU31E9Z7JW | Toyota | RAV4 | 2018 | Silver |
-| 4 | DAM41UDN3CHU2WVF6 | Volvo | V60 | 2019 | Gray |
-| 5 | DAM41UDN3CHU2WVF6 | Volvo | V60 Cross Country | 2019 | Gray |
+| 1 | 3K096I98581DHSNUP | Volkswagen | Tiguan | 2019 | Blue |
+| 2 | ZM8G7BEUQZ97IH46V | Peugeot | Rifter | 2019 | Red |
+| 3 | RKXVNNIHLVVZOUB4M | Ford | Fusion | 2018 | White |
+| 4 | HKNDGS7CU31E9Z7JW | Toyota | RAV4 | 2018 | Silver |
+| 5 | DAM41UDN3CHU2WVF6 | Volvo | V60 | 2019 | Gray |
+| 6 | DAM41UDN3CHU2WVF6 | Volvo | V60 Cross Country | 2019 | Gray |
 
 ### Customers
 
 | ID | Customer ID | Name | Phone | Email | Address | City | State/Province | Country | Postal |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 10001 | Pablo Picasso | +34 636 17 63 82 | - | Paseo de la Chopera, 14 | Madrid | Madrid | Spain | 28045 |
-| 1 | 20001 | Abraham Lincoln | +1 305 907 7086 | - | 120 SW 8th St | Miami | Florida | United States | 33130 |
-| 2 | 30001 | Napoléon Bonaparte | +33 1 79 75 40 00 | - | 40 Rue du Colisée | Paris | Île-de-France | France | 75008 |
+| 1 | 10001 | Pablo Picasso | +34 636 17 63 82 | - | Paseo de la Chopera, 14 | Madrid | Madrid | Spain | 28045 |
+| 2 | 20001 | Abraham Lincoln | +1 305 907 7086 | - | 120 SW 8th St | Miami | Florida | United States | 33130 |
+| 3 | 30001 | Napoléon Bonaparte | +33 1 79 75 40 00 | - | 40 Rue du Colisée | Paris | Île-de-France | France | 75008 |
 
 ### Salespersons
 
 | ID | Staff ID | Name | Store |
 | --- | --- | --- | --- |
-| 0 | 00001 | Petey Cruiser | Madrid |
-| 1 | 00002 | Anna Sthesia | Barcelona |
-| 2 | 00003 | Paul Molive | Berlin |
-| 3 | 00004 | Gail Forcewind | Paris |
-| 4 | 00005 | Paige Turner | Mimia |
-| 5 | 00006 | Bob Frapples | Mexico City |
-| 6 | 00007 | Walter Melon | Amsterdam |
-| 7 | 00008 | Shonda Leer | São Paulo |
+| 1 | 00001 | Petey Cruiser | Madrid |
+| 2 | 00002 | Anna Sthesia | Barcelona |
+| 3 | 00003 | Paul Molive | Berlin |
+| 4 | 00004 | Gail Forcewind | Paris |
+| 5 | 00005 | Paige Turner | Mimia |
+| 6 | 00006 | Bob Frapples | Mexico City |
+| 7 | 00007 | Walter Melon | Amsterdam |
+| 8 | 00008 | Shonda Leer | São Paulo |
 
 ### Invoices
 
 | ID | Invoice Number | Date | Car | Customer | Sales Person |
 | --- | --- | --- | --- | --- | --- |
-| 0 | 852399038 | 22-08-2018 | 0 | 1 | 3 |
-| 1 | 731166526 | 31-12-2018 | 3 | 0 | 5 |
-| 2 | 271135104 | 22-01-2019 | 2 | 2 | 7 |
+| 1 | 852399038 | 22-08-2018 | 1 | 1 | 3 |
+| 2 | 731166526 | 31-12-2018 | 3 | 3 | 5 |
+| 3 | 271135104 | 22-01-2019 | 2 | 2 | 7 |
 
 ## Bonus Challenge - Updating and Deleting Database Records
 
@@ -120,8 +118,6 @@ Create **`update.sql`** to update your existing data.
 In addition, you also find a duplicated car entry for VIN `DAM41UDN3CHU2WVF6`. You want to delete car ID #4 from the database. Create **`delete.sql`** to perform the deletion.
 
 ## Deliverables
-
-- Your database structure design diagram in the form of image.
 
 - `create.sql` and `seeding.sql`
 
