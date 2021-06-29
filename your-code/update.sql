@@ -2,8 +2,6 @@ update Customers
 set City = 'Miami'
 where CustomerID = '20001';
 
-select * from Customers;
-
 update Customers
 set Email = 'ppicasso@gmail.com' 
 where Customer_Name LIKE '%Pablo Picasso%';
